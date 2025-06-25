@@ -1,0 +1,142 @@
+Airflow Windows Installation
+Windows subsystem for Linux
+
+pip3 install apache-airflow --no-cache-dir --no-deps
+
+Run this in windows search
+
+Turn Windows features on or off
+
+Run this in command prompt
+
+wsl --install
+
+Step 1: Update Your System
+
+sudo apt update
+
+Step 2: Install Python and Virtual Environment
+
+sudo apt install python3 python3-pip
+
+Install virtualenv:
+
+sudo pip3 install virtualenv #pip install virtualenv
+
+Step 3: Create and Activate a Virtual Environment
+
+mkdir airflow_project
+
+cd airflow_project
+
+Create a virtual environment:
+
+virtualenv airflow_venv
+
+source airflow_venv/bin/activate
+
+Step 4: Install Apache Airflow with Constraints
+
+Set Airflow constraints:
+
+AIRFLOW_VERSION=2.6.2
+
+PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
+
+CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+
+Install Apache Airflow using constraints:
+
+pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+
+Step 5: Initialize the Database
+
+Set the Airflow home directory:
+
+export AIRFLOW_HOME=~/airflow
+
+Initialize the database:
+
+airflow db init
+
+Step 6: Start Airflow
+
+Start the web server:
+
+airflow webserver --port 8085
+
+source ~/airflow_project/airflow_venv/bin/activate        source airflow_venv/bin/activate
+
+airflow scheduler
+
+Accessing Airflow
+
+http://localhost:8085
+
+Additional Steps
+
+Set up the Airflow user (Optional):
+
+airflow users create
+--username admin
+--firstname gowtham
+--lastname sb
+--role Admin
+--email test@admin.com
+
+
+Admin
+Lavanya987
+
+airflow webserver --port 8085
+
+# if already in use error comes then
+ps aux |grep airflow
+kill -9
+kill $(cat ~/airflow/airflow-scheduler.pid)
+
+
+
+
+
+
+
+
+
+
+
+
+KARTHIK R
+  Varthur, Bengaluru - 560066, Karnataka
+• +91 8494846249  • karthik987321@gmail.com  • www.linkedin.com/in/karthikr02122001
+
+
+SUMMARY	
+IT Engineer with 11 months of experience in building, maintaining and optimizing robust ETL code that drive data integration and support business intelligence initiatives. I leverage my expertise in Ruby, Python, AWS and MYSQL to design scalable and efficient workflows that ensure seamless data extraction, transformation, and loading.
+PROFESSIONAL EXPERIENCE	
+Trainocate India, Bengaluru, Karnataka Aug 2024 – Present
+Networking
+IT Engineer
+●	Designing to host system critical applications.
+●	Nutanix which is a Hyper Converged Infrastructure where we need to host our own private Cloud environment and convert it to Hybrid cloud by connect it with Public Cloud providers such as AWS, MS AZURE, GCP.
+●	Flex Pod which also a Collab of Cisco Computing systems and NetApp Storage Blocks, where we will use full capabilities offered in cisco and NetApp devices.
+●	Maintain our companies data center for zero downtime for optimal production by configuring the Networking devices and the servers.
+
+INTERNSHIP	
+Trainocate India, Bengaluru, Karnataka Jul 2024 – Aug 2024
+Networking
+Trainee
+●	Learnt how Computer Networks works and Virtualization.
+●	Write python code to automate networking in Linux.
+●	.
+
+EDUCATION	
+East Point College of Engineering and Technology, Bengaluru, Karnataka 2019-2023
+BE in Computer Science and Engineering
+●	Completed Bachelor’s Degree with overall CGPA of 7.
+●	Worked on many Mini Projects to magnify my skills.
+
+SKILLS AND OTHERS	
+
+●	Technical skills -  .
+●	Soft skills - Write python code to automate networking in Linux.
